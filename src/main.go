@@ -1,8 +1,8 @@
 package main
 
 import (
-	client "Client"
-	server "Server"
+	"client"
+	"server"
 	"sync"
 )
 
