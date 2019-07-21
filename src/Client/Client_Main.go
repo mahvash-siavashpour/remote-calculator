@@ -15,13 +15,15 @@ func RunClient() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Entre First Number:")
 	num1, _ := reader.ReadString('\n')
+	fmt.Println("Enter Operand:")
+	op, _ := reader.ReadString('\n')
 	fmt.Println("Enter Second Number:")
 	num2, _ := reader.ReadString('\n')
+	write := num1 + op + num2 + "."
+	connection.Write([]byte(write))
 
-	connection.Write([]byte(num1))
-	connection.Write([]byte(num2))
+	res, _ := bufio.NewReader(connection).ReadString('\n')
+	fmt.Println("Result:", res)
+	connection.Close()
 
-	//res, err := bufio.NewReader(connection).ReadString('\n')
-	//fmt.Println(err)
-	//fmt.Println(res)
 }

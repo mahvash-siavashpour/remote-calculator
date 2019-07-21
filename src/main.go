@@ -9,7 +9,6 @@ import (
 var WG sync.WaitGroup
 
 func main() {
-
 	WG.Add(1)
 	go server.RunServer()
 	WG.Add(1)
