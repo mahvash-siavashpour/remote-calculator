@@ -7,6 +7,6 @@ import (
 
 func main() {
 
-	server.Server_Run()
-	client.Client_Run()
+	go server.RunServer()
+	go client.RunClient()
 }
