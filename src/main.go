@@ -1,10 +1,12 @@
 package main
 
 import (
-	_ "Client/main"
+	client "Client"
+	server "Server"
 )
 
 func main() {
 
-	go Client.Client_Run()
+	server.Server_Run()
+	client.Client_Run()
 }
