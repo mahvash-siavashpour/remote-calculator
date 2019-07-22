@@ -15,12 +15,18 @@ func RunServer() {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	//connect to client
 	connection, err := client.Accept()
 	if err != nil {
 		fmt.Println(err)
 	}
 
+	//receive the string from client
 	receive, err := bufio.NewReader(connection).ReadString('.')
+	if err != nil {
+		fmt.Println(err)
+	}
 	st := strings.Split(receive, "\n")
 
 	n1, _ := strconv.Atoi(st[0])
@@ -36,8 +42,18 @@ func RunServer() {
 		res = n1 * n2
 	} else if op == "/" {
 		res = n1 / n2
+	} else {
+		_, err = connection.Write([]byte("Invalid Input!"))
+		if err != nil {
+			fmt.Println(err)
+		}
+		connection.Close()
+		return
 	}
 
-	_, _ = connection.Write([]byte(strconv.Itoa(res)))
+	_, err = connection.Write([]byte(strconv.Itoa(res)))
+	if err != nil {
+		fmt.Println(err)
+	}
 	connection.Close()
 }

@@ -1,6 +1,8 @@
 package main
 
 import (
+	//"github.com/mahvash-siavashpour/remote-calculator/client"
+	//"github.com/mahvash-siavashpour/remote-calculator/server"
 	"client"
 	"server"
 	"sync"
