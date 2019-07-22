@@ -15,5 +15,6 @@ func main() {
 	go server.RunServer()
 	WG.Add(1)
 	go client.RunClient()
+
 	WG.Wait()
 }

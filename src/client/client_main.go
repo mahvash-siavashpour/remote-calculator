@@ -10,6 +10,7 @@ import (
 func RunClient() {
 
 	fmt.Println("Launching Client...")
+
 	connection, err := net.Dial("tcp", "127.0.0.1:8080")
 	if err != nil {
 		fmt.Println(err)
@@ -38,4 +39,5 @@ func RunClient() {
 
 	fmt.Println("Result:", res)
 	connection.Close()
+
 }
