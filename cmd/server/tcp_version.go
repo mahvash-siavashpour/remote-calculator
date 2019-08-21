@@ -53,7 +53,7 @@ func main() {
 			connection.Close()
 			return
 		}
-		
+
 		_, err = connection.Write([]byte(strconv.Itoa(res)))
 		if err != nil {
 			fmt.Println(err)
