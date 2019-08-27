@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 )
 
 type Operation struct {
@@ -23,10 +24,13 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Enter First Number:")
 	num1, _ := reader.ReadString('\n')
+	num1 = strings.Split(num1, "\r\n")[0]
 	fmt.Println("Enter Operator:")
 	op, _ := reader.ReadString('\n')
+	op = strings.Split(op, "\r\n")[0]
 	fmt.Println("Enter Second Number:")
 	num2, _ := reader.ReadString('\n')
+	num2 = strings.Split(num2, "\r\n")[0]
 
 	operation := Operation{num1, op, num2}
 	js, err := json.Marshal(operation)

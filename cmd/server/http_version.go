@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"strings"
 )
 
 type Operation struct {
@@ -17,18 +16,18 @@ type Operation struct {
 
 func calculate(operand1, operator, operand2 string) string {
 
-	n1, _ := strconv.Atoi(strings.Split(operand1, "\r\n")[0])
-	n2, _ := strconv.Atoi(strings.Split(operand2, "\r\n")[0])
+	n1, _ := strconv.Atoi(operand1)
+	n2, _ := strconv.Atoi(operand2)
 
 	fmt.Println(n1 + n2)
 	var res int
-	if operator == "+\r\n" {
+	if operator == "+" {
 		res = n1 + n2
-	} else if operator == "-\r\n" {
+	} else if operator == "-" {
 		res = n1 - n2
-	} else if operator == "*\r\n" {
+	} else if operator == "*" {
 		res = n1 * n2
-	} else if operator == "/\r\n" {
+	} else if operator == "/" {
 		res = n1 / n2
 	} else {
 		fmt.Println("Error in input")
