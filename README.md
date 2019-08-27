@@ -14,9 +14,9 @@ On the client side you have to enter the operands and the operator in the order 
 
 This the format of the json that client send to the server :
 ```
-Operand1 : number\r\n
-Operator : sign\r\n
-Operand2 : number\r\n
+Operand1 : number
+Operator : sign
+Operand2 : number
 ```
 
 And the server sends back the result in a single string.
