@@ -12,7 +12,7 @@ On the client side you have to enter the operands and the operator in the order 
 
 ### How to use HTTP Version
 
-This the format of the json that client send to the server :
+This is the format of the json that client sends to the server :
 ```
 Operand1 : number
 Operator : sign
